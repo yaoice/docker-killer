@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM --platform=${TARGETPLATFORM} alpine:3.12
 MAINTAINER Jan Garaj info@monitoringartist.com
 
 COPY docker-image-files /
@@ -14,3 +14,4 @@ RUN \
 EXPOSE 5001
 CMD ["help"]
 ENTRYPOINT ["/test.sh"]
+
